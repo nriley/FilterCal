@@ -1,7 +1,7 @@
 from datetime import timedelta
 from icalendar import Calendar, Alarm
 
-__all__ = ('add_alarms_to_events_matching,')
+__all__ = ('add_alarms_to_events_matching',)
 
 def add_alarms_to_events_matching(ics, summary_substr,
                                   offset=timedelta(minutes=-30)):
