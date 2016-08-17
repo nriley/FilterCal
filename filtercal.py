@@ -2,7 +2,7 @@ from flask import Flask, abort, redirect, request
 from fetch import add_alarms_to_events_in_ics
 app = Flask(__name__)
 
-@app.route('/filtercal')
+@app.route('/nical/filter')
 def filtercal():
     ics_url = request.args.get('ics_url')
     if not ics_url:
