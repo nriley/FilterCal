@@ -8,7 +8,11 @@ def add_alarms_to_events_in_ics(url):
     parsed_url = urlparse.urlparse(url)
 
     # validate that URL is valid
-    
+
+    scheme = parsed_url.scheme.lower()
+    if scheme == 'http':
+        parsed_url = parsed_url._replace(scheme='https')
+        url = parsed_url.geturl()
     assert parsed_url.scheme.lower() == 'https'
     assert parsed_url.netloc.lower().endswith('new-innov.com')
     
